@@ -8,10 +8,10 @@
 				if (guess === random) {
 					alert('You are right, the number is ' + (random));
 				} else if (guess < random) {
-					alert('Our number is lower, try again');
+					alert('Our number is higher, try again');
 					guessTheNumber();
 				} else {
-					alert('Our number is higher, try again');
+					alert('Our number is lower, try again');
 					guessTheNumber();
 				}
 			} else {
