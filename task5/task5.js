@@ -9,7 +9,7 @@ function b(firstTerm, secondTerm) {
 function c(base, exponent) {
 	if (exponent <= 0) {
 		return 0;
-	}else{	
+	} else {	
 		var number = 1;
 		for (var i = 1; i <= exponent; i++) {
 			number *= base;
@@ -43,7 +43,7 @@ function f(arrSymbl, count) {
 function g(number) {
 	if (number === undefined) {
 		return 99;
-	}else{
+	} else {
 		return number;
 	}
 }
@@ -61,7 +61,29 @@ function j(arr = []) {
 }
 
 function k (obj = {}) {
-	console.log(obj.a);
+	var result = 0;
+	for ( var key in obj) {
+		result += obj[key];
+	}
+	return result;
 }
 
+function m (firsArr = [], secondArr = []) {
+	if (firsArr.length === secondArr.length) {
+		var resultArr = [];
+		for (var i = 0; i < firsArr.length; i++) {
+			resultArr[i] = firsArr[i] + secondArr[i];
+		}
+	} else {
+		console.log('Please enter same length arrays');
+	}
+	return resultArr;
+}
 
+function n (firstNumber) {
+	return function n1 (secondNumber) {
+		return function n2 (thirdNumber) {
+			return firstNumber + secondNumber + thirdNumber;
+		}
+	}
+}
