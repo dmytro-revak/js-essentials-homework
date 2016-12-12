@@ -37,7 +37,7 @@
         haveYouGuessedNumber = true;
         break;
       } else if (usersNumber !== ramdomNumber && i === 3) {
-        console.log('Your win - 0$');
+        console.log('Sorry, but you have lost. Your prize is 0 $');
       }
     }
 
