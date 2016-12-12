@@ -6,7 +6,7 @@
   askYouWantToPlay();
 
   function askYouWantToPlay() {
-    doYouWantToPlay = confirm('Do you want to play the game?');
+    var doYouWantToPlay = confirm('Do you want to play the game?');
     if (doYouWantToPlay) {
       playTheGame(numberOfGame, sizeOfPrize);
     } else {
@@ -45,18 +45,16 @@
 
     function continueTheGame() {
       var doYuoWantToPlayAgain = confirm('Do you want to play the game one more time ?');
-      if (doYuoWantToPlayAgain == true && haveYouGuessedNumber == true) {
+      if (doYuoWantToPlayAgain === true && haveYouGuessedNumber === true) {
         sizeOfPrize = Math.pow(3,numberOfGame);
         numberOfGame++;
         sizeOfGap *= 2;
         playTheGame(numberOfGame, sizeOfPrize);
-      } else if (doYuoWantToPlayAgain == true && haveYouGuessedNumber == false) {
+      } else if (doYuoWantToPlayAgain === true && haveYouGuessedNumber === false) {
         playTheGame(numberOfGame, sizeOfPrize);
       } else {
         console.log('Thanks for the game! Your win is ' + finalPrize + ' $');
       }
     }
   }  
-})()
-
-
+})();
