@@ -12,7 +12,14 @@ function getDecimal(num) {
     return (numberWithDecimal % 1).toFixed(decimalNumbersAmount);
 }
 
+function fibBinet(fibNumber) {
+    var f = (1 + Math.sqrt(5)) / 2;
+    return Math.round(Math.pow(f, fibNumber) / Math.sqrt(5));
+}
+
 // sumToNumbers();
-alert( getDecimal(12.345) );
-alert( getDecimal(1.2) );
-alert( getDecimal(-1.2) );
+// console.log( getDecimal(12.345) );
+// console.log( getDecimal(1.2) );
+// console.log( getDecimal(-1.2) );
+// console.log( fibBinet(3) );
+// console.log( fibBinet(77) );
