@@ -17,9 +17,24 @@ function fibBinet(fibNumber) {
     return Math.round(Math.pow(f, fibNumber) / Math.sqrt(5));
 }
 
+function randomNumberFromZeroToMax(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function randomNumberFromMinToMax(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+function randomNumberFromMinWithMax(min, max) {
+    return Math.floor(Math.random() * ((max + 1) - min) + min);
+}
+
 // sumToNumbers();
 // console.log( getDecimal(12.345) );
 // console.log( getDecimal(1.2) );
 // console.log( getDecimal(-1.2) );
 // console.log( fibBinet(3) );
 // console.log( fibBinet(77) );
+// console.log(randomNumberFromZeroToMax(5));
+// console.log(randomNumberFromMinToMax(4, 10));
+// console.log(randomNumberFromMinWithMax(1, 3));
