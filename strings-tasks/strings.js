@@ -68,3 +68,16 @@ console.log(stringTruncation('Some string with 25 chars', 20));
 console.log(stringTruncation('Some string with 25 chars', 25));
 */
 
+
+/**
+The function that returns value of the accepted currency string.
+*/
+
+/*
+function extractCurrencyValue(string) {
+    return parseInt(string.slice(1));
+}
+
+console.log(extractCurrencyValue('$120'));
+console.log(extractCurrencyValue('$5'));
+*/
