@@ -5,7 +5,7 @@ The function that returns an accepted string with uppercase first char
 /*
 function makeFirstCharUppercase(string) {
     var firstUpperChar = string.charAt(0).toUpperCase(),
-        userStringBody = string.slice(1);
+        userStringBody = string.slice(1),
         newString = firstUpperChar + userStringBody;
     return newString;
 }
@@ -21,7 +21,7 @@ The function that checks does the accepted string contain any of spam words.
 */
 
 /*
-spamWords = ['spam', 'test', 'bitch', 'xxx'];
+var spamWords = ['spam', 'test', 'bitch', 'xxx'];
 
 function checkSpam(string) {
     var userString = string.toLowerCase(),
