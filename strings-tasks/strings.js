@@ -47,3 +47,24 @@ console.log(checkSpam('ToTal SPAM'));
 */
 
 
+/**
+The function that truncates the accepted string when that one longer than given string length.
+*/
+
+/*
+function stringTruncation(string, maxStringLength) {
+    var userString = string,
+        maxLength = parseInt(maxStringLength);
+
+    if (userString.length > maxLength) {
+        userString = userString.slice(0, maxLength - 3);
+        userString += '...';
+    }
+
+    return userString;
+}
+
+console.log(stringTruncation('Some string with 25 chars', 20));
+console.log(stringTruncation('Some string with 25 chars', 25));
+*/
+
