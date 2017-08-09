@@ -40,6 +40,9 @@ var salaries = {
 // console.log(countSalaries(salaries));
 
 
+/**
+The function returns the name of highest paid employee.
+ */
 
 function getHighestPaidEmployee(salariesObject) {
     var highestPaidEmployee = null,
@@ -57,4 +60,29 @@ function getHighestPaidEmployee(salariesObject) {
     return highestPaidEmployee || 'There are not employees';
 }
 
-console.log(getHighestPaidEmployee(salaries));
+// console.log(getHighestPaidEmployee(salaries));
+
+
+
+
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n)
+}
+
+function multiplyNumeric(object) {
+    for (var key in object) {
+        if (isNumeric(object[key])) {
+            object[key] = object[key] * 2;
+        }
+    }
+}
+
+var menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+};
+
+console.log(menu);
+multiplyNumeric(menu);
+console.log(menu);
