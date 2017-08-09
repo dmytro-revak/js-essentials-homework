@@ -44,12 +44,13 @@ var salaries = {
 The function returns the name of highest paid employee.
  */
 
+
 function getHighestPaidEmployee(salariesObject) {
     var highestPaidEmployee = null,
         highestSalary = 0;
 
     for (var employee in salariesObject) {
-        currentEmployeeSalary = salariesObject[employee];
+        var currentEmployeeSalary = salariesObject[employee];
 
         if (currentEmployeeSalary > highestSalary) {
             highestPaidEmployee = employee;
@@ -66,6 +67,7 @@ function getHighestPaidEmployee(salariesObject) {
 /**
 The function multiplies all numeric properties in the accepted object.
  */
+
 
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -84,7 +86,6 @@ var menu = {
     height: 300,
     title: "My menu"
 };
-
 // console.log(menu);
 // multiplyNumeric(menu);
 // console.log(menu);
@@ -133,6 +134,5 @@ var testObject = {
         test3: 'test3'
     }
 };
-
 console.log(testObject);
 console.log(recursiveObjectCopy(testObject));
