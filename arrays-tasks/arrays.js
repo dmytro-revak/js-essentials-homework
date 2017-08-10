@@ -84,7 +84,7 @@ function arrayUnshift(array, element) {
 
 
 /**
- The function returns a random array element. 
+ The function returns a random array element.
  */
 
 
@@ -97,4 +97,46 @@ function randomArrayElement(array) {
 // console.log(randomArrayElement(countries));
 
 
+/**
+ The function asks the user to enter the numbers and then returns total sum of entered numbers.
+ */
 
+
+function arrayCalculator() {
+
+    var enteredArray = getNumbersArray();
+    return calculateArray(enteredArray);
+
+    function calculateArray(array) {
+        var sum = 0;
+
+        for (var i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+
+        return sum;
+    }
+
+    function getNumbersArray() {
+        var askNumber = true,
+            numbersArray = [];
+
+        while (askNumber) {
+            var number = prompt('Please, enter the number: ');
+
+            if (isNumeric(number)) {
+                numbersArray.push(+number);
+            } else {
+                askNumber = false;
+            }
+        }
+
+        return numbersArray;
+    }
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+}
+
+console.log(arrayCalculator());
