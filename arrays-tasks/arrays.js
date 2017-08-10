@@ -71,13 +71,30 @@ function arrayUnshift(array, element) {
     return array;
 }
 
-var styles = ['jazz', 'blues', 'rock'];
-console.log(styles);
-editPenultimateElement(styles, 'classic');
-console.log(styles);
-arrayShift(styles);
-console.log(styles);
-arrayUnshift(styles, 'funk');
-console.log(styles);
-arrayUnshift(styles, 'punk');
-console.log(styles);
+// var styles = ['jazz', 'blues', 'rock'];
+// console.log(styles);
+// editPenultimateElement(styles, 'classic');
+// console.log(styles);
+// arrayShift(styles);
+// console.log(styles);
+// arrayUnshift(styles, 'funk');
+// console.log(styles);
+// arrayUnshift(styles, 'punk');
+// console.log(styles);
+
+
+/**
+ The function returns a random array element. 
+ */
+
+
+function randomArrayElement(array) {
+    var randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+}
+
+// var countries = ['ukraine', 'russia', 'usa', 'canada', 'germany'];
+// console.log(randomArrayElement(countries));
+
+
+
