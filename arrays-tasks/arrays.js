@@ -158,8 +158,37 @@ function findIndex(array, value) {
     return valueIndex;
 }
 
-var testArray = ['test', 2, 1.5, false];
-console.log(findIndex(testArray, 'test'));
-console.log(findIndex(testArray, 2));
-console.log(findIndex(testArray, 1.5));
-console.log(findIndex(testArray, 0));
+// var testArray = ['test', 2, 1.5, false];
+// console.log(findIndex(testArray, 'test'));
+// console.log(findIndex(testArray, 2));
+// console.log(findIndex(testArray, 1.5));
+// console.log(findIndex(testArray, 0));
+
+
+
+
+/**
+The function returns the numbers array where all numbers are in certain range.
+ */
+
+
+function filterRange(array, a, b) {
+    var filteredArray = [];
+
+    for (var i = 0; i < array.length; i++) {
+        var element = array[i];
+
+        if (element >= a && element <= b) {
+            filteredArray.push(element);
+        }
+    }
+
+    return filteredArray;
+}
+
+// var numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(filterRange(numbersArray, 2, 8));
+// console.log(filterRange(numbersArray, 5, 6));
+// console.log(filterRange(numbersArray, 5, 5));
+
+
