@@ -58,7 +58,7 @@ function arrayShift(array) {
 
 
 /**
- The function simulates the arrays unshift function.
+ The function simulates the arrays indexOf function.
  */
 
 
@@ -139,4 +139,27 @@ function arrayCalculator() {
     }
 }
 
-console.log(arrayCalculator());
+// console.log(arrayCalculator());
+
+
+/**
+ The function s 
+ */
+
+function findIndex(array, value) {
+    var valueIndex = -1;
+
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            valueIndex = i;
+        }
+    }
+
+    return valueIndex;
+}
+
+var testArray = ['test', 2, 1.5, false];
+console.log(findIndex(testArray, 'test'));
+console.log(findIndex(testArray, 2));
+console.log(findIndex(testArray, 1.5));
+console.log(findIndex(testArray, 0));
