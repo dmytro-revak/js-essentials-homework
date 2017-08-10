@@ -192,3 +192,55 @@ function filterRange(array, a, b) {
 // console.log(filterRange(numbersArray, 5, 5));
 
 
+
+
+
+
+
+function getSumOfPrimeNumbers(amountOfNumbers) {
+    var numbersSequence = getCertainNumbersSequence(amountOfNumbers),
+        primeNumbersSequence = getPrimeNumbersSequence(numbersSequence),
+        primeNumbersSum = getSequenceSum(primeNumbersSequence, 2);
+
+    return primeNumbersSum;
+
+    function getSequenceSum(numbersSequence, startNumber) {
+        var sum = 0;
+
+        for (var i = startNumber; i < numbersSequence.length; i++) {
+            if (numbersSequence[i]) sum += i;
+        }
+
+        return sum;
+    }
+
+    function getPrimeNumbersSequence(numbersSequence) {
+        for (var i = 2; i < numbersSequence.length; i++) {
+            if (i * i > numbersSequence.length) {
+                break;
+            } else if (numbersSequence[i]) {
+                removeMultipleOfCertainNumber(i, numbersSequence);
+            }
+        }
+
+        return numbersSequence;
+    }
+
+    function removeMultipleOfCertainNumber(number, numbersSequence) {
+        for (var i = number * number; i < numbersSequence.length; i += number) {
+            numbersSequence[i] = false;
+        }
+    }
+
+    function getCertainNumbersSequence(amountOfNumbers) {
+        var numbersSequence = [];
+
+        for (var i = 2; i < amountOfNumbers + 1; i++) {
+            numbersSequence[i] = true;
+        }
+
+        return numbersSequence;
+    }
+}
+
+console.log(getSumOfPrimeNumbers(100));
