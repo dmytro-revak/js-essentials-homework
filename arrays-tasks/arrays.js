@@ -19,7 +19,8 @@ function getLastElement(array) {
 
 
 function arrayPush(array, element) {
-    return array[array.length] = element;
+    array[array.length] = element;
+    return array;
 }
 
 // var users = ['tom', 'mike'];
@@ -28,3 +29,55 @@ function arrayPush(array, element) {
 // console.log(users);
 
 
+/**
+ The function updates the penultimate element to accepted one.
+*/
+
+
+function editPenultimateElement(array, element) {
+    array[array.length - 2] = element;
+    return array;
+}
+
+
+/**
+ The function simulates the arrays shift function.
+ */
+
+
+function arrayShift(array) {
+    var firstElement = array[0];
+
+    for (var i = 0; i < array.length; i++) {
+        array[i] = array[i + 1];
+    }
+    array.length = --array.length;
+
+    return firstElement;
+}
+
+
+/**
+ The function simulates the arrays unshift function.
+ */
+
+
+function arrayUnshift(array, element) {
+    for (var i = array.length; i >= 0; i--) {
+        array[i] = array[i - 1];
+    }
+    array[0] = element;
+
+    return array;
+}
+
+var styles = ['jazz', 'blues', 'rock'];
+console.log(styles);
+editPenultimateElement(styles, 'classic');
+console.log(styles);
+arrayShift(styles);
+console.log(styles);
+arrayUnshift(styles, 'funk');
+console.log(styles);
+arrayUnshift(styles, 'punk');
+console.log(styles);
