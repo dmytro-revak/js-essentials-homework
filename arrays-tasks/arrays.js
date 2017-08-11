@@ -302,6 +302,11 @@ var classesObject = {
 // console.log(classesObject);
 
 
+/**
+ The function converts hyphen-string to camelCase string.
+ */
+
+
 function cameCaseConvert(hyphenString) {
     var stringWords = hyphenString.split('-');
 
@@ -317,6 +322,37 @@ function cameCaseConvert(hyphenString) {
     return stringWords.join('');
 }
 
-console.log(cameCaseConvert('background-color'));
-console.log(cameCaseConvert('list-style-image'));
-console.log(cameCaseConvert('-webkit-transition'));
+// console.log(cameCaseConvert('background-color'));
+// console.log(cameCaseConvert('list-style-image'));
+// console.log(cameCaseConvert('-webkit-transition'));
+
+
+/**
+ The function removes accepted class name in the certain object's field of classes names.
+ */
+
+
+function removeClass(object, className) {
+    var classesNames = (object.classesNames) ? object.classesNames.split(' ') : [];
+    for (var i = 0; i < classesNames.length; i++) {
+        var currentClassName = classesNames[i];
+
+        if (currentClassName === className) {
+            classesNames.splice(i, 1);
+            i--;
+        }
+    }
+
+    object.classesNames = classesNames.join(' ');
+}
+
+var classesObject = {
+    classesNames: 'open class menu some menu menu'
+};
+
+removeClass(classesObject, 'open');
+removeClass(classesObject, 'blabla');
+removeClass(classesObject, 'menu');
+console.log(classesObject);
+removeClass(classesObject, 'menu');
+console.log(classesObject);
