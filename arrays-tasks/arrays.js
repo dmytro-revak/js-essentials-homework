@@ -292,13 +292,31 @@ var classesObject = {
     classesNames: 'new'
 };
 
-addClass(classesObject, 'new');
+// addClass(classesObject, 'new');
 // console.log(classesObject.classesNames);
-addClass(classesObject, 'open');
+// addClass(classesObject, 'open');
 // console.log(classesObject.classesNames);
-addClass(classesObject, 'me');
+// addClass(classesObject, 'me');
 // console.log(classesObject.classesNames);
-addClass(classesObject, 'me');
-console.log(classesObject);
+// addClass(classesObject, 'me');
+// console.log(classesObject);
 
 
+function cameCaseConvert(hyphenString) {
+    var stringWords = hyphenString.split('-');
+
+    for (var i = 1; i < stringWords.length; i++) {
+        var word = stringWords[i],
+            wordBody = word.slice(1),
+            firstChar = word.charAt(0).toUpperCase(),
+            modifiedWord = firstChar + wordBody;
+        
+        stringWords[i] = modifiedWord;
+    }
+
+    return stringWords.join('');
+}
+
+console.log(cameCaseConvert('background-color'));
+console.log(cameCaseConvert('list-style-image'));
+console.log(cameCaseConvert('-webkit-transition'));
