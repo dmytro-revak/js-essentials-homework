@@ -194,7 +194,10 @@ function filterRange(array, a, b) {
 
 
 
-
+/**
+ The function returns the sum of all prime numbers in certain
+ range using the sieve of Eratosthenes algorithm.
+ */
 
 
 function getSumOfPrimeNumbers(amountOfNumbers) {
