@@ -143,8 +143,9 @@ function arrayCalculator() {
 
 
 /**
- The function s 
+ The function simulates arrays' indexOf function.
  */
+
 
 function findIndex(array, value) {
     var valueIndex = -1;
@@ -165,10 +166,8 @@ function findIndex(array, value) {
 // console.log(findIndex(testArray, 0));
 
 
-
-
 /**
-The function returns the numbers array where all numbers are in certain range.
+ The function returns the numbers array where all numbers are in certain range.
  */
 
 
@@ -190,8 +189,6 @@ function filterRange(array, a, b) {
 // console.log(filterRange(numbersArray, 2, 8));
 // console.log(filterRange(numbersArray, 5, 6));
 // console.log(filterRange(numbersArray, 5, 5));
-
-
 
 
 /**
@@ -249,8 +246,6 @@ function getSumOfPrimeNumbers(amountOfNumbers) {
 // console.log(getSumOfPrimeNumbers(100));
 
 
-
-
 /**
  The function returns the max sum of numbers from the certain sub array.
  */
@@ -269,10 +264,10 @@ function getMaxSubSum(numbersArray) {
     return maxSum;
 }
 
-console.log(getMaxSubSum([-1, 2, 3, -9]));
-console.log(getMaxSubSum([2, -1, 2, 3, -9]));
-console.log(getMaxSubSum([-1, 2, 3, -9, 11]));
-console.log(getMaxSubSum([-2, -1, 1, 2]));
-console.log(getMaxSubSum([100, -9, 2, -3, 5]));
-console.log(getMaxSubSum([1, 2, 3]));
-console.log(getMaxSubSum([-1, -2, -3]));
+// console.log(getMaxSubSum([-1, 2, 3, -9]));
+// console.log(getMaxSubSum([2, -1, 2, 3, -9]));
+// console.log(getMaxSubSum([-1, 2, 3, -9, 11]));
+// console.log(getMaxSubSum([-2, -1, 1, 2]));
+// console.log(getMaxSubSum([100, -9, 2, -3, 5]));
+// console.log(getMaxSubSum([1, 2, 3]));
+// console.log(getMaxSubSum([-1, -2, -3]));
