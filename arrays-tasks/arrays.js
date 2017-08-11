@@ -246,4 +246,33 @@ function getSumOfPrimeNumbers(amountOfNumbers) {
     }
 }
 
-console.log(getSumOfPrimeNumbers(100));
+// console.log(getSumOfPrimeNumbers(100));
+
+
+
+
+/**
+ The function returns the max sum of numbers from the certain sub array.
+ */
+
+
+function getMaxSubSum(numbersArray) {
+    var currentSum = 0,
+        maxSum = 0;
+
+    for (var i = 0; i < numbersArray.length; i++) {
+        var number = numbersArray[i];
+        currentSum = (currentSum + number < 0) ? 0 : currentSum + number;
+        maxSum = (currentSum > maxSum) ? currentSum : maxSum;
+    }
+
+    return maxSum;
+}
+
+console.log(getMaxSubSum([-1, 2, 3, -9]));
+console.log(getMaxSubSum([2, -1, 2, 3, -9]));
+console.log(getMaxSubSum([-1, 2, 3, -9, 11]));
+console.log(getMaxSubSum([-2, -1, 1, 2]));
+console.log(getMaxSubSum([100, -9, 2, -3, 5]));
+console.log(getMaxSubSum([1, 2, 3]));
+console.log(getMaxSubSum([-1, -2, -3]));
