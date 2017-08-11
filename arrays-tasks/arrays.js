@@ -279,21 +279,26 @@ function getMaxSubSum(numbersArray) {
 
 
 function addClass(object, className) {
-    var classesNames = object.classesNames.split(' ');
+    var classesNames = (object.classesNames) ? object.classesNames.split(' ') : [];
+    
     if (classesNames.indexOf(className) == -1) {
-        object.classesNames += (' ' + className);
+        classesNames.push(className);
     }
+
+    object.classesNames = classesNames.join(' ');
 }
 
 var classesObject = {
-    classesNames: 'open menu'
+    classesNames: 'new'
 };
 
-// addClass(classesObject, 'new');
+addClass(classesObject, 'new');
 // console.log(classesObject.classesNames);
-// addClass(classesObject, 'open');
+addClass(classesObject, 'open');
 // console.log(classesObject.classesNames);
-// addClass(classesObject, 'me');
+addClass(classesObject, 'me');
 // console.log(classesObject.classesNames);
+addClass(classesObject, 'me');
+console.log(classesObject);
 
 
