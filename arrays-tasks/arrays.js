@@ -271,3 +271,29 @@ function getMaxSubSum(numbersArray) {
 // console.log(getMaxSubSum([100, -9, 2, -3, 5]));
 // console.log(getMaxSubSum([1, 2, 3]));
 // console.log(getMaxSubSum([-1, -2, -3]));
+
+
+/**
+ The function adds unique class names to the classesNames property of accepted array.
+ */
+
+
+function addClass(object, className) {
+    var classesNames = object.classesNames.split(' ');
+    if (classesNames.indexOf(className) == -1) {
+        object.classesNames += (' ' + className);
+    }
+}
+
+var classesObject = {
+    classesNames: 'open menu'
+};
+
+// addClass(classesObject, 'new');
+// console.log(classesObject.classesNames);
+// addClass(classesObject, 'open');
+// console.log(classesObject.classesNames);
+// addClass(classesObject, 'me');
+// console.log(classesObject.classesNames);
+
+
