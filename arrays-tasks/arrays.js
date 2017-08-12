@@ -439,3 +439,31 @@ function sortPeopleByAge(firstPerson, secondPerson) {
 // console.log(people.sort(sortPeopleByAge));
 
 
+/**
+ The function accepts an array of anagrams and returns the array with only one word for each anagram.
+ */
+
+
+function anagramClear(anagramsArray) {
+    var anagramKeys = {},
+        clearArray = [];
+
+    for (var i = 0; i < anagramsArray.length; i++) {
+        var anagram = anagramsArray[i],
+            anagramKey = anagram.toLowerCase().split('').sort().join('');
+        anagramKeys[anagramKey] = anagram;
+    }
+
+    for (var key in anagramKeys) {
+        clearArray.push(anagramKeys[key]);
+    }
+
+    return clearArray;
+}
+
+var anagrams = ['abed', 'bade', 'bead', 'abet', 'beat', 'beta', 'abut', 'tabu', 'tuba'],
+    anagrams2 = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
+
+console.log(anagramClear(anagrams));
+console.log(anagramClear(anagrams2));
+
