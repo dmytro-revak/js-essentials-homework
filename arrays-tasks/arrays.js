@@ -406,3 +406,18 @@ function makeSortedCopy(stringsArray) {
 // var stringsArray = ["HTML", "JavaScript", "CSS"];
 // console.log(makeSortedCopy(stringsArray));
 // console.log(stringsArray);
+
+
+/**
+ The function implements the random sorting of numbers array.
+ */
+
+
+function randomSort() {
+    return Math.random() - 0.5;
+}
+
+// var numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(numbersArray.sort(randomSort));
+
+
