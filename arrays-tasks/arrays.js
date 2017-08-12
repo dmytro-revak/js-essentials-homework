@@ -350,9 +350,26 @@ var classesObject = {
     classesNames: 'open class menu some menu menu'
 };
 
-removeClass(classesObject, 'open');
-removeClass(classesObject, 'blabla');
-removeClass(classesObject, 'menu');
-console.log(classesObject);
-removeClass(classesObject, 'menu');
-console.log(classesObject);
+// removeClass(classesObject, 'open');
+// removeClass(classesObject, 'blabla');
+// removeClass(classesObject, 'menu');
+// console.log(classesObject);
+// removeClass(classesObject, 'menu');
+// console.log(classesObject);
+
+
+
+function filterRangeInPlace(arr, a, b) {
+    for (var i = 0; i < arr.length; i++) {
+        var number = arr[i];
+
+        if (number < a || number > b) {
+            arr.splice(i, 1);
+            i--;
+        }
+    }
+}
+
+numbersArray = [5, 3, 8, 1, 2, 7, 5, 9, 0];
+filterRangeInPlace(numbersArray, 1, 4);
+console.log(numbersArray);
