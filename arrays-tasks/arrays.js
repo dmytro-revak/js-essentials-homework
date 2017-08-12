@@ -461,9 +461,31 @@ function anagramClear(anagramsArray) {
     return clearArray;
 }
 
-var anagrams = ['abed', 'bade', 'bead', 'abet', 'beat', 'beta', 'abut', 'tabu', 'tuba'],
-    anagrams2 = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
+// var anagrams = ['abed', 'bade', 'bead', 'abet', 'beat', 'beta', 'abut', 'tabu', 'tuba'],
+    // anagrams2 = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
 
-console.log(anagramClear(anagrams));
-console.log(anagramClear(anagrams2));
+// console.log(anagramClear(anagrams));
+// console.log(anagramClear(anagrams2));
 
+
+/**
+ The function returns an array with only unique elements. 
+ */
+
+
+function getUniqueArray(arr) {
+    var uniqueElements = {};
+
+    for (var i = 0; i < arr.length; i++) {
+        var element = arr[i];
+
+        if (!(element in uniqueElements)) {
+            uniqueElements[element] = true;
+        }
+    }
+
+    return Object.keys(uniqueElements);
+}
+
+var strings = ['some', 'text', 'some', 'text', 'unique', 'some', 'text', 'test', '8-()'];
+console.log(getUniqueArray(strings));
