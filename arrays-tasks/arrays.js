@@ -421,3 +421,21 @@ function randomSort() {
 // console.log(numbersArray.sort(randomSort));
 
 
+/**
+ The function implements sorting the array of people by the age field.
+ */
+
+
+function sortPeopleByAge(firstPerson, secondPerson) {
+    return firstPerson.age - secondPerson.age;
+}
+
+// var max = {name: 'max', age: 23},
+    // john = {name: 'john', age: 18},
+    // lex = {name: 'lex', age: 6},
+    // donald = {name: 'donald', age: 50},
+    // people = [max, john, lex, donald];
+
+// console.log(people.sort(sortPeopleByAge));
+
+
