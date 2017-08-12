@@ -379,10 +379,30 @@ function filterRangeInPlace(arr, a, b) {
 // console.log(numbersArray);
 
 
+/**
+ The function implements reverse sorting of numbers array.
+ */
+
+
 function reverseSort(firstElement, secondElement) {
     return secondElement - firstElement;
 }
 
-numbersArray = [5, 2, 1, -10, 8];
-numbersArray.sort(reverseSort);
-console.log(numbersArray);
+// numbersArray = [5, 2, 1, -10, 8];
+// numbersArray.sort(reverseSort);
+// console.log(numbersArray);
+
+
+/**
+ The function makes a copy of the accepted array and then returns that sorted copy.
+ */
+
+
+function makeSortedCopy(stringsArray) {
+    var arrayCopy = stringsArray.slice();
+    return arrayCopy.sort();
+}
+
+// var stringsArray = ["HTML", "JavaScript", "CSS"];
+// console.log(makeSortedCopy(stringsArray));
+// console.log(stringsArray);
