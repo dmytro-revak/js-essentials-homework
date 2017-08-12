@@ -358,6 +358,10 @@ var classesObject = {
 // console.log(classesObject);
 
 
+/**
+ The function removes all numbers that aren't in the accepted range.
+ */
+
 
 function filterRangeInPlace(arr, a, b) {
     for (var i = 0; i < arr.length; i++) {
@@ -370,6 +374,15 @@ function filterRangeInPlace(arr, a, b) {
     }
 }
 
-numbersArray = [5, 3, 8, 1, 2, 7, 5, 9, 0];
-filterRangeInPlace(numbersArray, 1, 4);
+// var numbersArray = [5, 3, 8, 1, 2, 7, 5, 9, 0];
+// filterRangeInPlace(numbersArray, 1, 4);
+// console.log(numbersArray);
+
+
+function reverseSort(firstElement, secondElement) {
+    return secondElement - firstElement;
+}
+
+numbersArray = [5, 2, 1, -10, 8];
+numbersArray.sort(reverseSort);
 console.log(numbersArray);
