@@ -487,5 +487,61 @@ function getUniqueArray(arr) {
     return Object.keys(uniqueElements);
 }
 
-var strings = ['some', 'text', 'some', 'text', 'unique', 'some', 'text', 'test', '8-()'];
-console.log(getUniqueArray(strings));
+// var strings = ['some', 'text', 'some', 'text', 'unique', 'some', 'text', 'test', '8-()'];
+// console.log(getUniqueArray(strings));
+
+
+/**
+ The complex of functions which working with linked lists. 
+ That functions return value of each list element in the certain order.
+ */
+
+
+function printLinkedList(linkedList) {
+    var head = linkedList;
+
+    while (head) {
+        console.log(head.value);
+        head = head.next;
+    }
+}
+
+function printLinkedListRecursive(linkedList) {
+    console.log(linkedList.value);
+
+    if (linkedList.next) {
+        printLinkedListRecursive(linkedList.next);
+    }
+}
+
+function printLinkedListRecursiveReverse(linkedList) {
+    if (linkedList.next) {
+        printLinkedListRecursiveReverse(linkedList.next);
+    }
+
+    console.log(linkedList.value);
+}
+
+function printLinkedListReverse(linkedList) {
+    var head = linkedList,
+        tempArray = [];
+
+    while (head) {
+        tempArray.push(head.value);
+        head = head.next;
+    }
+
+    for (var i = tempArray.length - 1; i >= 0; i--) {
+        console.log(tempArray[i]);
+    }
+}
+
+// var list = {value: 1};
+// list.next = {value: 2};
+// list.next.next = {value: 3};
+// list.next.next.next = {value: 4};
+
+// printLinkedList(list);
+// printLinkedListRecursive(list);
+// printLinkedListRecursiveReverse(list);
+// printLinkedListReverse(list);
