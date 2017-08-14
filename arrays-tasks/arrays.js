@@ -559,6 +559,11 @@ elementsLength = sentenceArray.map(function(item) {
 // console.log(elementsLength);
 
 
+/**
+ The function returns the array with interim sums of the each element of accepted array.
+ */
+
+
 function getInterimSums(numbersArray) {
     var interimSums = [];
     numbersArray.reduce(function(currentSum, item, index) {
@@ -570,5 +575,19 @@ function getInterimSums(numbersArray) {
     return interimSums;
 }
 
-console.log(getInterimSums([1, 2, 3, 4, 5]));
-console.log(getInterimSums([-2,-1,0,1]));
+// console.log(getInterimSums([1, 2, 3, 4, 5]));
+// console.log(getInterimSums([-2,-1,0,1]));
+
+
+/**
+ The function returns the array with only positive numbers.
+ */
+
+
+function filterPositiveNumbers(numbersArray) {
+    return numbersArray.filter(function(number) {
+        return number >= 0;
+    });
+}
+
+console.log(filterPositiveNumbers([0, 1, 2, 3, -1, -5, 6, -4]));
