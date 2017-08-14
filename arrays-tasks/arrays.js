@@ -547,6 +547,9 @@ function printLinkedListReverse(linkedList) {
 // printLinkedListReverse(list);
 
 
+/**
+ Use map function for getting the array with elements lengths.
+ */
 
 
 var sentenceArray = ['It', 'is', 'raining', 'today'],
@@ -590,4 +593,4 @@ function filterPositiveNumbers(numbersArray) {
     });
 }
 
-console.log(filterPositiveNumbers([0, 1, 2, 3, -1, -5, 6, -4]));
+// console.log(filterPositiveNumbers([0, 1, 2, 3, -1, -5, 6, -4]));
