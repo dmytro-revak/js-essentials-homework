@@ -545,3 +545,15 @@ function printLinkedListReverse(linkedList) {
 // printLinkedListRecursive(list);
 // printLinkedListRecursiveReverse(list);
 // printLinkedListReverse(list);
+
+
+
+
+var sentenseArray = ['It', 'is', 'raining', 'today'],
+    elementsLenght = [];
+
+elementsLenght = sentenseArray.map(function(item) {
+    return item.length;
+});
+
+console.log(elementsLenght);
