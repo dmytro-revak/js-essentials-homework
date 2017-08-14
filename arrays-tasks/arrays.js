@@ -549,11 +549,26 @@ function printLinkedListReverse(linkedList) {
 
 
 
-var sentenseArray = ['It', 'is', 'raining', 'today'],
-    elementsLenght = [];
+var sentenceArray = ['It', 'is', 'raining', 'today'],
+    elementsLength = [];
 
-elementsLenght = sentenseArray.map(function(item) {
+elementsLength = sentenceArray.map(function(item) {
     return item.length;
 });
 
-console.log(elementsLenght);
+// console.log(elementsLength);
+
+
+function getInterimSums(numbersArray) {
+    var interimSums = [];
+    numbersArray.reduce(function(currentSum, item, index) {
+        var result = currentSum + item;
+        interimSums[index] = result;
+        return result;
+    }, 0);
+
+    return interimSums;
+}
+
+console.log(getInterimSums([1, 2, 3, 4, 5]));
+console.log(getInterimSums([-2,-1,0,1]));
