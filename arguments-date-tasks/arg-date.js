@@ -14,6 +14,11 @@ function checkFirstArgument() {
 // console.log(checkFirstArgument(1));
 
 
+/**
+ The function returns the sum of all accepted arguments.
+ */
+
+
 function allArgumentsSum() {
     var result = 0;
 
@@ -24,8 +29,27 @@ function allArgumentsSum() {
     return result;
 }
 
-console.log(allArgumentsSum());
-console.log(allArgumentsSum(1));
-console.log(allArgumentsSum(1, 2));
-console.log(allArgumentsSum(1, 2, 3));
-console.log(allArgumentsSum(1, 2, 3, 4));
+// console.log(allArgumentsSum());
+// console.log(allArgumentsSum(1));
+// console.log(allArgumentsSum(1, 2));
+// console.log(allArgumentsSum(1, 2, 3));
+// console.log(allArgumentsSum(1, 2, 3, 4));
+
+
+var localDate = new Date(2012, 1, 20, 3, 12);
+// console.log(localDate);
+
+
+/**
+ The function returns the name of the current week day.
+ */
+
+
+function getWeekDay() {
+    var date = new Date(),
+        weekDayNumber = date.getDay(),
+        weekDays = ['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat'];
+    return weekDays[weekDayNumber];
+}
+
+console.log(getWeekDay());
