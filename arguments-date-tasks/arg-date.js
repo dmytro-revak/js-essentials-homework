@@ -89,3 +89,19 @@ function getDateAgo(date, days) {
 // console.log(getDateAgo(date, 365));
 
 
+/**
+ The function returns the last date of the accepted month certain year.
+ */
+
+
+function getLastDayOfMonth(year, month) {
+    var date = new Date(year, month + 1);
+    date.setDate(0);
+
+    return date.getDate();
+}
+
+// console.log(getLastDayOfMonth(2012, 0));
+// console.log(getLastDayOfMonth(2012, 1));
+// console.log(getLastDayOfMonth(2013, 1));
+
