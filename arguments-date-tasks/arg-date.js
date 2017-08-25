@@ -105,3 +105,15 @@ function getLastDayOfMonth(year, month) {
 // console.log(getLastDayOfMonth(2012, 1));
 // console.log(getLastDayOfMonth(2013, 1));
 
+
+
+function getSecondsToday() {
+    var date = new Date(),
+        day = date.getDate(),
+        month = date.getMonth(),
+        year = date.getFullYear(),
+        startDayDate = new Date(year, month, day);
+    return date - startDayDate;
+}
+
+console.log(getSecondsToday());
