@@ -57,7 +57,7 @@ function getWeekDay() {
 
 
 /**
- The function returns the number of the week day in the accepted date.
+ The function returns the number of the week day in the accepted date. (EU numeration).
  */
 
 
@@ -68,5 +68,24 @@ function getLocalDay(date) {
     return weekDayNumber;
 }
 
-console.log(getLocalDay(new Date(2012, 0, 3)));
-console.log(getLocalDay(new Date()));
+// console.log(getLocalDay(new Date(2012, 0, 3)));
+// console.log(getLocalDay(new Date()));
+
+
+/**
+ The function returns the day of date.This date is older on the amount of accepted days.
+ */
+
+
+function getDateAgo(date, days) {
+    var dateCopy = new Date(date);
+    dateCopy.setDate(date.getDate() - days);
+    return dateCopy.getDate();
+}
+
+// var date = new Date(2015, 0, 2);
+// console.log(getDateAgo(date, 1));
+// console.log(getDateAgo(date, 2));
+// console.log(getDateAgo(date, 365));
+
+
