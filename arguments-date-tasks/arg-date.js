@@ -49,7 +49,24 @@ function getWeekDay() {
     var date = new Date(),
         weekDayNumber = date.getDay(),
         weekDays = ['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat'];
-    return weekDays[weekDayNumber];
+
+        return weekDays[weekDayNumber];
 }
 
-console.log(getWeekDay());
+// console.log(getWeekDay());
+
+
+/**
+ The function returns the number of the week day in the accepted date.
+ */
+
+
+function getLocalDay(date) {
+    var weekDayNumber = date.getDay();
+    weekDayNumber = (weekDayNumber === 0) ? 7 : weekDayNumber;
+
+    return weekDayNumber;
+}
+
+console.log(getLocalDay(new Date(2012, 0, 3)));
+console.log(getLocalDay(new Date()));
