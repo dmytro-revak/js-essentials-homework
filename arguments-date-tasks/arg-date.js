@@ -195,7 +195,7 @@ function formatPastDate(date) {
 }
 
 
-console.log(formatPastDate(new Date(new Date - 1)));
-console.log(formatPastDate(new Date(new Date - 30 * 1000)));
-console.log(formatPastDate(new Date(new Date - 5 * 60 * 1000)));
-console.log(formatPastDate(new Date(new Date - 86400 * 1000)));
+// console.log(formatPastDate(new Date(new Date() - 1)));
+// console.log(formatPastDate(new Date(new Date() - 30 * 1000)));
+// console.log(formatPastDate(new Date(new Date() - 5 * 60 * 1000)));
+// console.log(formatPastDate(new Date(new Date() - 86400 * 1000)));
