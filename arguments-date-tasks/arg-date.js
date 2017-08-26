@@ -136,5 +136,34 @@ function getSecondsToTomorrow() {
     return Math.floor((tomorrow - now) / 1000);
 }
 
-console.log(getSecondsToTomorrow());
+// console.log(getSecondsToTomorrow());
 
+
+/**
+ The function formats the accepted date to the dd.mm.hh format.
+ */
+
+
+function formatData(date) {
+    var year = String(date.getFullYear()),
+        month = String(date.getMonth() + 1),
+        day = String(date.getDate());
+
+    year = year.slice(-2);
+    month = (month.length < 2) ? '0' + month : month;
+    day = (day.length < 2) ? '0' + day : day;
+
+    return `${day}.${month}.${year}`;
+}
+
+
+var date = new Date(2001, 1, 01);
+console.log(formatData(date));
+var date = new Date(2014, 0, 30);
+console.log(formatData(date));
+var options = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric'
+};
+console.log(date.toLocaleString("uk", options));
