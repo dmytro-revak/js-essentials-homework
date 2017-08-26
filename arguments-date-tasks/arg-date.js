@@ -106,14 +106,35 @@ function getLastDayOfMonth(year, month) {
 // console.log(getLastDayOfMonth(2013, 1));
 
 
+/**
+ The function that returns a number of seconds which have gone from start of the day. 
+ */
+
 
 function getSecondsToday() {
-    var date = new Date(),
-        day = date.getDate(),
-        month = date.getMonth(),
-        year = date.getFullYear(),
+    var now = new Date(),
+        day = now.getDate(),
+        month = now.getMonth(),
+        year = now.getFullYear(),
         startDayDate = new Date(year, month, day);
-    return date - startDayDate;
+
+        return Math.floor((now - startDayDate) / 1000);
 }
 
-console.log(getSecondsToday());
+// console.log(getSecondsToday());
+
+
+/**
+ The function returns the number of seconds remains up to the tomorrow.
+ */
+
+
+function getSecondsToTomorrow() {
+    var now = new Date(),
+        tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+
+    return Math.floor((tomorrow - now) / 1000);
+}
+
+console.log(getSecondsToTomorrow());
+
