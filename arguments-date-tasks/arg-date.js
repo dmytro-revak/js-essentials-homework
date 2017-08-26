@@ -157,13 +157,45 @@ function formatData(date) {
 }
 
 
-var date = new Date(2001, 1, 01);
-console.log(formatData(date));
-var date = new Date(2014, 0, 30);
-console.log(formatData(date));
-var options = {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric'
-};
-console.log(date.toLocaleString("uk", options));
+// var date = new Date(2001, 1, 01);
+// console.log(formatData(date));
+// var date = new Date(2014, 0, 30);
+// console.log(formatData(date));
+// var options = {
+//     year: 'numeric',
+//     month: 'numeric',
+//     day: 'numeric'
+// };
+// console.log(date.toLocaleString("uk", options));
+
+
+/**
+ The function returns the certain answer which depends on the accepted date age.
+ */
+
+
+function formatPastDate(date) {
+    var now = new Date(),
+        datesDifference = now - date,
+        secondsBefore = Math.floor(datesDifference / 1000),
+        minutesBefore = Math.floor(datesDifference / 60000),
+        formatedDate = '';
+
+    if (datesDifference < 1000) {
+        formatedDate = 'right now';
+    } else if (datesDifference < 60000) {
+        formatedDate = secondsBefore + ' seconds before';
+    } else if (datesDifference < 60000000) {
+        formatedDate = minutesBefore + ' minutes before';
+    } else {
+        formatedDate = date.toDateString();
+    }
+
+    return formatedDate;
+}
+
+
+console.log(formatPastDate(new Date(new Date - 1)));
+console.log(formatPastDate(new Date(new Date - 30 * 1000)));
+console.log(formatPastDate(new Date(new Date - 5 * 60 * 1000)));
+console.log(formatPastDate(new Date(new Date - 86400 * 1000)));
