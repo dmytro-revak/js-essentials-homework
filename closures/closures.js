@@ -6,6 +6,24 @@ transformedNumbers = numbers.map(function(elem) {
     };
 });
 
-for (var i = 0; i < transformedNumbers.length; i++) {
-    console.log(transformedNumbers[i]());
+// for (var i = 0; i < transformedNumbers.length; i++) {
+//     console.log(transformedNumbers[i]());
+// }
+
+
+
+
+
+objectstArray = [
+    {a : 'a', b : 'b'},
+    {a : 'a'},
+    {a : 'a', b : 'b', c : 'c'}
+];
+
+function sortObjectByPropAmount(firsElem, secondElem) {
+    return Object.keys(firsElem).length - Object.keys(secondElem).length;
 }
+
+objectstArray.sort(sortObjectByPropAmount);
+
+console.log(objectstArray);
