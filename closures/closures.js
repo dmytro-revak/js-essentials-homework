@@ -26,4 +26,26 @@ function sortObjectByPropAmount(firsElem, secondElem) {
 
 objectstArray.sort(sortObjectByPropAmount);
 
-console.log(objectstArray);
+// console.log(objectstArray);
+
+
+
+function fibonacciCounter() {
+    var firstConjunction = 0,
+        secondConjunction = 1;
+
+    return function() {
+        var currentSum = firstConjunction + secondConjunction;
+        firstConjunction = secondConjunction;
+        secondConjunction = currentSum;
+
+        return currentSum;
+    };
+
+}
+
+var fib = fibonacciCounter();
+
+for (var i = 0; i < 10; i++) {
+    console.log(fib());
+}
