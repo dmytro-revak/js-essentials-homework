@@ -73,4 +73,35 @@ function addNumbers(firstNumber) {
     };
 }
 
-console.log(addNumbers(5)(5));
+// console.log(addNumbers(5)(5));
+
+
+
+
+function stringBuffer() {
+    var storage = '';
+
+    function buffer(elem) {
+
+        if (arguments.length) {
+            storage += elem;
+        } else {
+            console.log(storage);
+        }
+    }
+
+    buffer.clear = function() {
+        storage = '';
+    };
+
+    return buffer;
+}
+
+var buffer = stringBuffer();
+
+buffer('some value');
+buffer(5);
+buffer(['a', 'r', 'r', 'a', 'y']);
+buffer();
+buffer.clear();
+buffer();
