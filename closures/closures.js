@@ -46,6 +46,21 @@ function fibonacciCounter() {
 
 var fib = fibonacciCounter();
 
-for (var i = 0; i < 10; i++) {
-    console.log(fib());
-}
+// for (var i = 0; i < 10; i++) {
+//     console.log(fib());
+// }
+
+
+
+
+
+
+
+Number.prototype.plus = function (n) {
+    return this + n;
+};
+Number.prototype.minus = function (n) {
+    return this - n;
+};
+
+console.log((5).plus(2).minus(4));
