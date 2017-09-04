@@ -99,9 +99,44 @@ function stringBuffer() {
 
 var buffer = stringBuffer();
 
-buffer('some value');
-buffer(5);
-buffer(['a', 'r', 'r', 'a', 'y']);
-buffer();
-buffer.clear();
-buffer();
+// buffer('some value');
+// buffer(5);
+// buffer(['a', 'r', 'r', 'a', 'y']);
+// buffer();
+// buffer.clear();
+// buffer();
+
+
+
+
+function sortByField(field) {
+    return function(firstElem, secondElem) {
+        return (firstElem[field] > secondElem[field]) ? 1 : -1;
+    };
+}
+
+var users = [
+    {
+        name: 'Tom',
+        surname: 'Ivanov',
+        age: 20
+    }, {
+        name: 'Peter',
+        surname: 'Doe',
+        age: 25
+    }, {
+        name: 'Eric',
+        surname: 'Moreno',
+        age: 18
+    }
+];
+
+users.sort(sortByField('name'));
+users.forEach(function(user) {
+    console.log(user.name);
+});
+
+users.sort(sortByField('age'));
+users.forEach(function(user) {
+    console.log(user.name);
+});
