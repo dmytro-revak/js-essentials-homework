@@ -56,11 +56,21 @@ var fib = fibonacciCounter();
 
 
 
-Number.prototype.plus = function (n) {
+Number.prototype.plus = function(n) {
     return this + n;
 };
-Number.prototype.minus = function (n) {
+Number.prototype.minus = function(n) {
     return this - n;
 };
 
-console.log((5).plus(2).minus(4));
+// console.log((5).plus(2).minus(4));
+
+
+
+function addNumbers(firstNumber) {
+    return function(secondNumber) {
+        return firstNumber + secondNumber;
+    };
+}
+
+console.log(addNumbers(5)(5));
