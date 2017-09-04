@@ -131,12 +131,47 @@ var users = [
     }
 ];
 
-users.sort(sortByField('name'));
-users.forEach(function(user) {
-    console.log(user.name);
-});
+// users.sort(sortByField('name'));
+// users.forEach(function(user) {
+//     console.log(user.name);
+// });
 
-users.sort(sortByField('age'));
-users.forEach(function(user) {
-    console.log(user.name);
-});
+// users.sort(sortByField('age'));
+// users.forEach(function(user) {
+//     console.log(user.name);
+// });
+
+
+
+
+function inBetween(smallestNumber, largestNumber) {
+    return function(element) {
+        return (element >= smallestNumber && element <= largestNumber);
+    };
+}
+
+function inArray(acceptedArray) {
+    return function(element) {
+        return acceptedArray.indexOf(element) !== -1;
+    };
+}
+
+function filter(acceptedArray, callback) {
+    var filteredArray = [];
+
+    acceptedArray.forEach(function(element) {
+        if (callback(element)) {
+            filteredArray.push(element);
+        }
+    });
+
+    return filteredArray;
+}
+
+var arr = [1, 2, 3, 4, 5, 6, 7];
+
+console.log(filter(arr, function(a) {
+    return a % 2 == 0;
+}));
+console.log(filter(arr, inBetween(3, 6)));
+console.log(filter(arr, inArray([1, 2, 10])));
