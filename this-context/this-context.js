@@ -20,6 +20,12 @@ var calculator = {
 // console.log(calculator.sum());
 // console.log(calculator.mul());
 
+
+/**
+ Rewrite calculator using function-constructor.
+ */
+
+
 function Calculator() {
     this.read = function() {
         this.firstNumber = parseInt(prompt('Enter the first number: '));
@@ -33,10 +39,11 @@ function Calculator() {
     };
 }
 
-var calculator = new Calculator();
-calculator.read();
-console.log('Sum: ' + calculator.sum());
-console.log('Mul: ' + calculator.mul());
+// var calculator = new Calculator();
+// calculator.read();
+// console.log('Sum: ' + calculator.sum());
+// console.log('Mul: ' + calculator.mul());
+
 
 /**
  Custom chaining with using this context.
@@ -85,3 +92,18 @@ function sum(argument) {
 
 // console.log(sum(1)(2)(1)(5));
 // console.log(sum(4)(2)(1)(5)(8));
+
+function NumbersAccumulator(startValue) {
+    this.value = startValue;
+
+    this.read = function() {
+        this.value += parseInt(prompt('Enter the number: ', 0));
+    };
+
+}
+
+var numbersAccumulator = new NumbersAccumulator(0);
+numbersAccumulator.read();
+numbersAccumulator.read();
+console.log(numbersAccumulator.value);
+
