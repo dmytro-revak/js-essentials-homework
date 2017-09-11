@@ -20,6 +20,23 @@ var calculator = {
 // console.log(calculator.sum());
 // console.log(calculator.mul());
 
+function Calculator() {
+    this.read = function() {
+        this.firstNumber = parseInt(prompt('Enter the first number: '));
+        this.secondNumber = parseInt(prompt('Enter the second number: '));
+    };
+    this.sum = function() {
+        return this.firstNumber + this.secondNumber;
+    };
+    this.mul = function() {
+        return this.firstNumber * this.secondNumber;
+    };
+}
+
+var calculator = new Calculator();
+calculator.read();
+console.log('Sum: ' + calculator.sum());
+console.log('Mul: ' + calculator.mul());
 
 /**
  Custom chaining with using this context.
@@ -66,5 +83,5 @@ function sum(argument) {
     return add;
 }
 
-console.log(sum(1)(2)(1)(5));
-console.log(sum(4)(2)(1)(5)(8));
+// console.log(sum(1)(2)(1)(5));
+// console.log(sum(4)(2)(1)(5)(8));
