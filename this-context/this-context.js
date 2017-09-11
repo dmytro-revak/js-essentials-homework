@@ -16,6 +16,31 @@ var calculator = {
     }
 };
 
-calculator.read();
-console.log(calculator.sum());
-console.log(calculator.mul());
+// calculator.read();
+// console.log(calculator.sum());
+// console.log(calculator.mul());
+
+
+/**
+ Custom chaining with using this context.
+ */
+
+
+var ladder = {
+    step: 0,
+
+    up: function() {
+        this.step++;
+        return this;
+    },
+    down: function() {
+        this.step--;
+        return this;
+    },
+    showStep: function() {
+        console.log(this.step);
+        return this;
+    }
+};
+
+// ladder.up().up().down().up().down().showStep();
