@@ -44,3 +44,27 @@ var ladder = {
 };
 
 // ladder.up().up().down().up().down().showStep();
+
+
+/**
+ Make possible the next syntax "sum(1)(2)(1)(3)(2)".
+ */
+
+
+function sum(argument) {
+    var currentSum = argument;
+
+    function add(number) {
+        currentSum += number;
+        return add;
+    }
+
+    add.toString = function() {
+        return currentSum;
+    };
+
+    return add;
+}
+
+console.log(sum(1)(2)(1)(5));
+console.log(sum(4)(2)(1)(5)(8));
