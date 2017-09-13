@@ -184,12 +184,36 @@ function User(fullName) {
     });
 }
 
-var john = new User('John Doe');
-console.log(john.firstName);
-console.log(john.lastName);
-john.firstName = 'Mark';
-john.lastName = 'Moreno';
-console.log(john.fullName);
+// var john = new User('John Doe');
+// console.log(john.firstName);
+// console.log(john.lastName);
+// john.firstName = 'Mark';
+// john.lastName = 'Moreno';
+// console.log(john.fullName);
 
+
+/**
+ Create Article constructor with static properties and methods.
+ */
+
+
+ function Article() {
+    this.created = new Date();
+    Article.articlesAmount++;
+    Article.lastArticleDate = this.created;
+}
+
+Article.articlesAmount = 0;
+Article.lastArticleDate = null;
+
+Article.showStatus = function() {
+    console.log(this.articlesAmount, this.lastArticleDate);
+};
+
+// new Article();
+// new Article();
+// Article.showStatus();
+// new Article();
+// Article.showStatus();
 
 
