@@ -223,11 +223,33 @@ Article.showStatus = function() {
 
 
 function sumArgs() {
-    return [].reduce.call(arguments, function(sum, currentValue) {
-        return sum + currentValue;
+    return [].reduce.call(arguments, function(a, b) {
+        return a + b;
     });
 }
 
-console.log(sumArgs(1, 2, 3));
-console.log(sumArgs(1, 2, 3, 2, 1));
+function mulArgs() {
+    return [].reduce.call(arguments, function(a, b) {
+        return a * b;
+    });
+}
 
+// console.log(sumArgs(1, 2, 3));
+// console.log(sumArgs(1, 2, 3, 2, 1));
+
+
+/**
+ The function implements the accepted function with an arbitrary amount of 
+ arguments and returns the result of that function.
+ */
+
+
+function applyAll(func) {
+    var arg = [].slice.call(arguments, 1);
+    return func.apply(null, arg);
+}
+
+// console.log(applyAll(Math.max, 2, -2, 3));
+// console.log(applyAll(Math.min, 2, -2, 3));
+// console.log(applyAll(sumArgs, 1, 2, 3));
+// console.log(applyAll(mulArgs, 2, 3, 4));
