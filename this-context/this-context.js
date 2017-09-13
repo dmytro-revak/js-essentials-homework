@@ -197,7 +197,7 @@ function User(fullName) {
  */
 
 
- function Article() {
+function Article() {
     this.created = new Date();
     Article.articlesAmount++;
     Article.lastArticleDate = this.created;
@@ -216,4 +216,18 @@ Article.showStatus = function() {
 // new Article();
 // Article.showStatus();
 
+
+/**
+ The function which returns the sum of arbitrary accepted arguments using 'call' method.
+ */
+
+
+function sumArgs() {
+    return [].reduce.call(arguments, function(sum, currentValue) {
+        return sum + currentValue;
+    });
+}
+
+console.log(sumArgs(1, 2, 3));
+console.log(sumArgs(1, 2, 3, 2, 1));
 
