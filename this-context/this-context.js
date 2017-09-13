@@ -93,6 +93,12 @@ function sum(argument) {
 // console.log(sum(1)(2)(1)(5));
 // console.log(sum(4)(2)(1)(5)(8));
 
+
+/**
+ The accumulator that saves all user entered values.
+ */
+
+
 function NumbersAccumulator(startValue) {
     this.value = startValue;
 
@@ -102,8 +108,88 @@ function NumbersAccumulator(startValue) {
 
 }
 
-var numbersAccumulator = new NumbersAccumulator(0);
-numbersAccumulator.read();
-numbersAccumulator.read();
-console.log(numbersAccumulator.value);
+// var numbersAccumulator = new NumbersAccumulator(0);
+// numbersAccumulator.read();
+// numbersAccumulator.read();
+// console.log(numbersAccumulator.value);
+
+
+// function Calculator() {
+
+//     var operators = {
+//         '+': function(a, b) {
+//             return a + b;
+//         },
+//         '-': function(a, b) {
+//             return a - b;
+//         }
+//     };
+
+//     this.calculate = function(mathExp) {
+//         debugger
+//         var expression = parseExpression(mathExp),
+//             currentSum = null;
+
+//         for (var i = 0; i < expression.length; i += 2) {
+
+//             // if (!parseInt(expression[i])) continue;
+
+//             var firstNumber = currentSum || parseInt(expression[i]),
+//                 secondNumber = parseInt(expression[i + 2]),
+//                 operator = operators[expression[i + 1]];
+
+//             currentSum = operator(firstNumber, secondNumber);
+//         }
+
+//         return currentSum;
+//     };
+
+//     function parseExpression(expression) {
+//         return expression.split(' ');
+//     }
+// }
+
+// var calc = new Calculator();
+// console.log(calc.calculate('3 + 7'));
+// console.log(calc.calculate('3 + 7 + 15 - 2'));
+// console.log(calc.calculate('2 + 1 - 2'));
+
+
+
+
+/**
+ Create User constructor function with the get/set descriptors.
+ */
+
+
+function User(fullName) {
+    this.fullName = fullName;
+
+    Object.defineProperty(this, 'firstName', {
+        get: function() {
+            return this.fullName.split(' ')[0];
+        },
+        set: function(newFirstName) {
+            this.fullName = newFirstName + ' ' + this.lastName;
+        }
+    });
+
+    Object.defineProperty(this, 'lastName', {
+        get: function() {
+            return this.fullName.split(' ')[1];
+        },
+        set: function(newLastName) {
+            this.fullName = this.firstName + ' ' + newLastName;
+        }
+    });
+}
+
+var john = new User('John Doe');
+console.log(john.firstName);
+console.log(john.lastName);
+john.firstName = 'Mark';
+john.lastName = 'Moreno';
+console.log(john.fullName);
+
+
 
