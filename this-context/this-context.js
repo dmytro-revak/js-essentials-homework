@@ -322,7 +322,19 @@ function f(x) {
     return Math.random() * x;
 }
 
-function makeCaching(f) { /* ваш код */ }
+function makeCaching(f) {
+    var cache = {};
+
+    return function(arg) {
+
+        if (arg in cache) {
+            return cache[arg];
+        }
+
+        cache[arg] = f.call(this, arg);
+        return cache[arg];
+    };
+}
 
 var f = makeCaching(f);
 var a, b;
