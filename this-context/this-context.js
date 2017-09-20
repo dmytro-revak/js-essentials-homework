@@ -256,7 +256,7 @@ function applyAll(func) {
 
 
 /**
- Practice with bind function. 
+ Practice with bind function.
  */
 
 
@@ -286,6 +286,48 @@ var user = {
     }
 };
 
-var jack = user;
-user = null;
-jack.checkPassword();
+// var jack = user;
+// user = null;
+// jack.checkPassword();
+
+
+/**
+ Use decorator pattern with creating logging function.
+ */
+
+function addNumbers(a, b) {
+    return a + b;
+}
+
+function makeLogging(f, log) {
+    return function() {
+        var arg = [].slice.apply(arguments);
+        Array.prototype.push.apply(log, arg);
+        return f.apply(this, arguments);
+    };
+}
+
+// var log = [];
+// add = makeLogging(addNumbers, log);
+
+// add(1, 4);
+// add(5, 9);
+
+// for (var i = 0; i < log.length; i++) {
+//     console.log('Log:' + log[i]);
+// }
+
+
+function f(x) {
+    return Math.random() * x;
+}
+
+function makeCaching(f) { /* ваш код */ }
+
+var f = makeCaching(f);
+var a, b;
+a = f(1);
+b = f(1);
+console.log(a == b);
+b = f(2);
+console.log(a == b);
