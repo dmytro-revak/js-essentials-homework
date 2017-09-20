@@ -114,47 +114,66 @@ function NumbersAccumulator(startValue) {
 // console.log(numbersAccumulator.value);
 
 
-// function Calculator() {
+/**
+ Create the calculator using function-constructor that accepts string 
+ math expression.
+ */
 
-//     var operators = {
-//         '+': function(a, b) {
-//             return a + b;
-//         },
-//         '-': function(a, b) {
-//             return a - b;
-//         }
-//     };
 
-//     this.calculate = function(mathExp) {
-//         debugger
-//         var expression = parseExpression(mathExp),
-//             currentSum = null;
+function Calculator() {
 
-//         for (var i = 0; i < expression.length; i += 2) {
+    this.operators = {
+        '+': function(a, b) {
+            return a + b;
+        },
+        '-': function(a, b) {
+            return a - b;
+        }
+    };
 
-//             // if (!parseInt(expression[i])) continue;
+    this.calculate = function(mathExp) {
+        var expression = parseExpression(mathExp),
+            currentOperator = expression[1],
+            result = null;
 
-//             var firstNumber = currentSum || parseInt(expression[i]),
-//                 secondNumber = parseInt(expression[i + 2]),
-//                 operator = operators[expression[i + 1]];
+        if (currentOperator in this.operators) {
+            var firstNumber = +expression[0],
+                secondNumber = +expression[2];
 
-//             currentSum = operator(firstNumber, secondNumber);
-//         }
+            result = this.operators[currentOperator](firstNumber, secondNumber);
+        } else {
+            console.log('You entered incorrect operator');
+        }
 
-//         return currentSum;
-//     };
+        return result;
+    };
 
-//     function parseExpression(expression) {
-//         return expression.split(' ');
-//     }
-// }
+    this.addMethod = function(name, func) {
+        this.operators[name] = func;
+    };
+
+    function parseExpression(expression) {
+        return expression.split(' ');
+    }
+}
 
 // var calc = new Calculator();
 // console.log(calc.calculate('3 + 7'));
-// console.log(calc.calculate('3 + 7 + 15 - 2'));
-// console.log(calc.calculate('2 + 1 - 2'));
-
-
+// console.log(calc.calculate('5 + 3'));
+// console.log(calc.calculate('2 - 2'));
+// calc.addMethod('*', function(a, b) {
+//     return a * b;
+// });
+// calc.addMethod('/', function(a, b) {
+//     return a / b;
+// });
+// calc.addMethod('**', function(a, b) {
+//     return Math.pow(a, b);
+// });
+// console.log(calc.calculate('2 * 2'));
+// console.log(calc.calculate('6 / 2'));
+// console.log(calc.calculate('3 ** 2'));
+// console.log(calc.calculate('a ** 2'));
 
 
 /**
@@ -318,6 +337,12 @@ function makeLogging(f, log) {
 // }
 
 
+/**
+ Practice with decorator pattern. Creating cache function that saves the decorated function
+ results for certain arguments.
+ */
+
+
 function f(x) {
     return Math.random() * x;
 }
@@ -336,10 +361,10 @@ function makeCaching(f) {
     };
 }
 
-var f = makeCaching(f);
-var a, b;
-a = f(1);
-b = f(1);
-console.log(a == b);
-b = f(2);
-console.log(a == b);
+// var f = makeCaching(f);
+// var a, b;
+// a = f(1);
+// b = f(1);
+// console.log(a == b);
+// b = f(2);
+// console.log(a == b);
