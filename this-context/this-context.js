@@ -253,3 +253,39 @@ function applyAll(func) {
 // console.log(applyAll(Math.min, 2, -2, 3));
 // console.log(applyAll(sumArgs, 1, 2, 3));
 // console.log(applyAll(mulArgs, 2, 3, 4));
+
+
+/**
+ Practice with bind function. 
+ */
+
+
+function ask(question, answer, ok, fail) {
+    var result = prompt(question, '');
+    if (result.toLowerCase() == answer.toLowerCase()) {
+        ok();
+    } else {
+        fail();
+    }
+}
+
+var user = {
+    login: 'Jack',
+    password: '12345',
+
+    loginOk: function() {
+        console.log(this.login + ' entered on the site');
+    },
+
+    loginFail: function() {
+        console.log(this.login + ': access error');
+    },
+
+    checkPassword: function() {
+        ask('Your password?', this.password, this.loginOk.bind(this), this.loginFail.bind(this));
+    }
+};
+
+var jack = user;
+user = null;
+jack.checkPassword();
