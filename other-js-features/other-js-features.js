@@ -107,3 +107,20 @@ team.toJSON = function() {
 
 // var jsonTeam = JSON.stringify(team);
 // console.log(jsonTeam);
+
+
+/**
+ Practice with setTimeout and setInterval functions.
+ */
+
+
+function printNumbersInterval() {
+    var number = 1,
+        timerId = setInterval(function() {
+            if (number === 20) clearInterval(timerId);
+            console.log(number);
+            number++;
+    }, 100);
+}
+
+printNumbersInterval();
