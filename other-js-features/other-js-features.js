@@ -47,10 +47,26 @@ function formatOneDigitDate(date, getDateElementFunction, isMonth) {
         }
 
         return dateElement;
-    }
+    };
 }
 
 // console.log(formatDate('2011-10-02'));
 // console.log(formatDate(1234567890));
 // console.log(formatDate([2014, 0, 1]));
 // console.log(formatDate(new Date(2014, 0, 1)));
+
+
+/**
+ Practice with JSON format.
+ */
+
+
+var leader = {
+    name: 'John Doe',
+    age: 35
+};
+
+var jsonLeader = JSON.stringify(leader);
+// console.log(jsonLeader);
+var objectLeader = JSON.parse(jsonLeader);
+// console.log(objectLeader);
