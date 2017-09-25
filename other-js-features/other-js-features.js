@@ -122,5 +122,14 @@ function printNumbersInterval() {
             number++;
     }, 100);
 }
+// printNumbersInterval();
 
-printNumbersInterval();
+function recursivePrintNumbersInterval() {
+    var number = 1;
+    setTimeout(function printNumbers() {
+        console.log(number);
+        number++;
+        if (number <= 20) setTimeout(printNumbers, 100);
+    }, 100);
+}
+// recursivePrintNumbersInterval();
