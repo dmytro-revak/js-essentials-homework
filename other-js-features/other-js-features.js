@@ -70,3 +70,40 @@ var jsonLeader = JSON.stringify(leader);
 // console.log(jsonLeader);
 var objectLeader = JSON.parse(jsonLeader);
 // console.log(objectLeader);
+
+
+
+var leader = {
+    name: 'John Doe'
+};
+
+var soldier = {
+  name: 'Eric Moreno'
+};
+leader.soldier = soldier;
+soldier.leader = leader;
+
+var team = [leader, soldier];
+team.toJSON = function() {
+    var teamJson = [];
+
+    this.forEach(function(elem) {
+        var jsonElem = {};
+
+        for (var key in elem) {
+
+            if (typeof(elem[key]) === 'object') {
+                jsonElem[key] = elem[key].name;
+            } else {
+                jsonElem[key] = elem[key];
+            }
+        }
+
+        teamJson.push(jsonElem);
+    });
+
+    return teamJson;
+};
+
+// var jsonTeam = JSON.stringify(team);
+// console.log(jsonTeam);
