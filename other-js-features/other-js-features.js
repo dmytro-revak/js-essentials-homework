@@ -39,7 +39,7 @@ function formatOneDigitDate(date, getDateElementFunction, isMonth) {
 
     return function() {
 
-        var dateElement = isMonth ? getDateElementFunction.call(date) + 1 : getDateElementFunction.call(date);
+        var dateElement = isMonth ? getDateElementFunction.func(date) + 1 : getDateElementFunction.func(date);
         dateElement = String(dateElement);
 
         if (dateElement.length === 1) {
@@ -133,3 +133,77 @@ function recursivePrintNumbersInterval() {
     }, 100);
 }
 // recursivePrintNumbersInterval();
+
+
+function delay(func, time) {
+
+    return function() {
+        var args = arguments,
+            self = this;
+
+        setTimeout(function() {
+            func.apply(self, args);
+        }, time);
+    };
+}
+
+function f(x) {
+    console.log(x);
+}
+
+// var f1000 = delay(f, 1000);
+// var f1500 = delay(f, 1500);
+// f1000('text');
+// f1500('second text');
+
+
+function debounce(func, time) {
+    var paused = false;
+
+    return function() {
+        if (paused) return;
+
+        func.apply(this, arguments);
+        paused = true;
+
+        setTimeout(function() {
+            paused = false;
+        }, time);
+    };
+}
+
+// var f = debounce(f, 1000);
+// f(1);
+// f(2);
+// setTimeout(function() { f(3) }, 100);
+// setTimeout(function() { f(4) }, 1100);
+// setTimeout(function() { f(5) }, 1500);
+
+
+function throttle(func, time) {
+    var last = null,
+        paused = false;
+
+    return function a() {
+        if (paused) {
+            last = arguments;
+            return;
+        }
+
+        func.apply(this, arguments);
+        paused = true;
+
+        setTimeout(function() {
+            paused = false;
+            if (last) {
+                a.apply(this, last);
+                last = null;
+            }
+        }, time);
+    };
+}
+
+// var f1000 = throttle(f, 1000);
+// f1000(1);
+// f1000(2);
+// f1000(3);
