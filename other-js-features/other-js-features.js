@@ -78,7 +78,7 @@ var leader = {
 };
 
 var soldier = {
-  name: 'Eric Moreno'
+    name: 'Eric Moreno'
 };
 leader.soldier = soldier;
 soldier.leader = leader;
