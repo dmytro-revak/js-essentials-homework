@@ -207,3 +207,22 @@ function throttle(func, time) {
 // f1000(1);
 // f1000(2);
 // f1000(3);
+
+
+/**
+ Practice with eval function.
+ */
+
+var calculator = {
+    expression: null,
+    getExpression: function() {
+        expression = prompt('Enter the math expression: ');
+    },
+    getResult: function() {
+        console.log(eval(expression));
+    }
+};
+
+// calculator.getExpression();
+// calculator.getResult();
+
